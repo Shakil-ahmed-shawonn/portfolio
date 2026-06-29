@@ -1,0 +1,74 @@
+/**
+ * @file app/globals.css
+ * @description Global styles for Tailwind v4.
+ *
+ * Tailwind v4 BREAKING CHANGES applied here:
+ *  - `@import "tailwindcss"` replaces the old @tailwind base/components/utilities
+ *  - Dark mode is declared via `@variant dark` NOT tailwind.config.ts
+ *  - Custom CSS variables declared in @theme block
+ *
+ * Color Palette — Ink Wash:
+ *   #4A4A4A  charcoal  (primary text / dark bg)
+ *   #CBCBCB  silver    (borders / muted)
+ *   #FFFFE3  cream     (light bg / page bg)
+ *   #6D8196  slate-blue (accent)
+ */
+
+@import "tailwindcss";
+
+/* ── Tailwind v4: enable class-based dark mode ─────────────────────────── */
+@variant dark (&:where(.dark, .dark *));
+
+/* ── Design tokens ─────────────────────────────────────────────────────── */
+@theme {
+  /* Ink Wash palette */
+  --color-ink-charcoal: #4A4A4A;
+  --color-ink-silver:   #CBCBCB;
+  --color-ink-cream:    #FFFFE3;
+  --color-ink-slate:    #6D8196;
+
+  /* Derived shades */
+  --color-ink-charcoal-dark:  #2e2e2e;
+  --color-ink-charcoal-light: #5e5e5e;
+  --color-ink-slate-light:    #8da3b5;
+  --color-ink-slate-dark:     #4f6275;
+  --color-ink-cream-dark:     #f0f0c8;
+
+  /* Typography */
+  --font-sans: system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+}
+
+/* ── Base ───────────────────────────────────────────────────────────────── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Light mode: cream background */
+body {
+  background-color: var(--color-ink-cream);
+  color: var(--color-ink-charcoal);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Dark mode: charcoal background */
+.dark body {
+  background-color: var(--color-ink-charcoal-dark);
+  color: var(--color-ink-cream);
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: transparent; }
+::-webkit-scrollbar-thumb  { background: var(--color-ink-silver); border-radius: 2px; }
+.dark ::-webkit-scrollbar-thumb { background: var(--color-ink-charcoal-light); }
+
+/* ── Reduced motion ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
