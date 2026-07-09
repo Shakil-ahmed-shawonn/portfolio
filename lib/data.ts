@@ -58,6 +58,22 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+    {
+    title: "JobBoard BD",
+    description:
+      "Full-stack job board platform for Bangladeshi job seekers. Django REST backend with JWT auth, role-based access for employers and candidates, and a React frontend.",
+    stack: ["Django", "PostgreSQL", "React", "Tailwind CSS", "REST API"],
+    github: "https://github.com/shakil-ahmed-shawonn/jobboard-bd",
+    tag: "Full Stack",
+  },
+  {
+    title: "ReviewSense",
+    description:
+      "Real-time review sentiment dashboard. Aggregates product reviews, runs sentiment classification, and surfaces actionable insights through an interactive chart interface.",
+    stack: ["FastAPI", "Python", "React", "Recharts", "NLP"],
+    github: "https://github.com/shakil-ahmed-shawonn/reviewsense",
+    tag: "NLP",
+  },
   {
     title: "TongueCheck",
     description:
@@ -76,22 +92,7 @@ export const projects: Project[] = [
     github: "https://github.com/shakil-ahmed-shawonn/sentiment-analysis",
     tag: "NLP",
   },
-  {
-    title: "JobBoard BD",
-    description:
-      "Full-stack job board platform for Bangladeshi job seekers. Django REST backend with JWT auth, role-based access for employers and candidates, and a React frontend.",
-    stack: ["Django", "PostgreSQL", "React", "Tailwind CSS", "REST API"],
-    github: "https://github.com/shakil-ahmed-shawonn/jobboard-bd",
-    tag: "Full Stack",
-  },
-  {
-    title: "ReviewSense",
-    description:
-      "Real-time review sentiment dashboard. Aggregates product reviews, runs sentiment classification, and surfaces actionable insights through an interactive chart interface.",
-    stack: ["FastAPI", "Python", "React", "Recharts", "NLP"],
-    github: "https://github.com/shakil-ahmed-shawonn/reviewsense",
-    tag: "NLP",
-  },
+
   {
     title: "SmartInvoice BD",
     description:
